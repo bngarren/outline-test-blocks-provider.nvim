@@ -37,6 +37,9 @@ return {
 
 ## Config
 
+>[!NOTE]
+>It defaults to activating only on `*_spec.lua` files. You can pass your own `supports_buffer(bufnr)` function to customize it to your liking
+
 ```lua
 ---@class test_blocks.Config
 ---
