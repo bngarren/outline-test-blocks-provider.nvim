@@ -2,6 +2,12 @@
 
 A simple external provider for [outline.nvim](https://github.com/hedyhli/outline.nvim) that shows your test blocks, e.g., `describe(...)`, `it(...)`, etc calls in the Outline.
 
+🚀 Automatically enabled for the following languages:
+
+- Typescript
+- Javascript
+- Lua
+
 <img src="./assets/example1.png" />
 
 ## Installation
@@ -38,7 +44,7 @@ return {
 ## Config
 
 >[!NOTE]
->It defaults to activating only on `*_spec.lua` files. You can pass your own `supports_buffer(bufnr)` function to customize it to your liking
+>It defaults to activating for any buffer in which it finds one of the enabled test blocks (e.g. `describe`, `it`, etc) within the first 500 lines. You can pass your own `supports_buffer(bufnr)` function to customize it to your liking.
 
 ```lua
 ---@class test_blocks.Config
@@ -48,7 +54,8 @@ return {
 ---@field enable? table<string, boolean>
 ---
 ---Whether to activate test_blocks provider for this buffer
----Default: any file ending with `_spec.lua`
+---Default: a buffer with the test blocks in `enable` found within it
+---i.e., if `it` or `describe` are found, will use test_blocks
 ---@field supports_buffer? function(bufnr: integer): boolean
 ---
 ---Max number of nested nodes to show in the outline
@@ -56,9 +63,11 @@ return {
 ---@field max_depth? integer
 ---
 ---Attempts to resize the outline sidebar for this provider
+---E.g. 40 will be 40%
 ---Default: uses the global outline.nvim config
 ---@field sidebar_width? integer
 
+---@type test_blocks.Config
 M.defaults = {
 	enable = { describe = true, it = true },
 	max_depth = 5,
