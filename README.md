@@ -1,5 +1,13 @@
 # outline-test-blocks-provider.nvim
 
+<div align=center>
+	
+[![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
+[![Neovim](https://img.shields.io/badge/Neovim%200.10+-green.svg?style=for-the-badge&logo=neovim&color=%2343743f)](https://neovim.io)
+![GitHub Release](https://img.shields.io/github/v/release/bngarren/outline-test-blocks-provider.nvim?style=for-the-badge&logoSize=200&color=%23f3d38a&labelColor=%23061914)
+
+</div>
+
 A simple external provider for [outline.nvim](https://github.com/hedyhli/outline.nvim) that shows your test blocks, e.g., `describe(...)`, `it(...)`, etc calls in the Outline.
 
 🚀 Automatically enabled for the following languages:
