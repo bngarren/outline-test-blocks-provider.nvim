@@ -91,7 +91,7 @@ function M.supports_buffer(bufnr, opts)
 		for name, is_on in pairs(M.config.enable) do
 			if is_on then
 				-- match e.g. "describe(" with optional whitespace
-				local pat = name .. "%s*%("
+				local pat = "^%s*" .. name .. "%s*%("
 				for _, line in ipairs(lines) do
 					if line:find(pat) then
 						found = true
